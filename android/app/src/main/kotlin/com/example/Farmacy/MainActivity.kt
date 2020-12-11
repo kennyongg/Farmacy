@@ -1,4 +1,4 @@
-package com.tvacstudio.Farmacy
+package com.example.Farmacy
 
 import io.flutter.embedding.android.FlutterActivity
 

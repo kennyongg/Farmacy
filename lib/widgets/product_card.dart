@@ -51,13 +51,13 @@ class ProductCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: Constants.regularHeading,
+                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.white)
                     ),
                     Text(
                       price,
                       style: TextStyle(
                           fontSize: 18.0,
-                          color: Theme.of(context).accentColor,
+                          color: Colors.white,
                           fontWeight: FontWeight.w600
                       ),
                     ),

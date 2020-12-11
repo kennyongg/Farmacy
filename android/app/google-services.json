@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "777680214392",
+    "project_id": "code-camp-2a886",
+    "storage_bucket": "code-camp-2a886.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777680214392:android:63a17839956f33fba8108d",
+        "android_client_info": {
+          "package_name": "com.example.Farmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777680214392-7ohn9ctib7fb1cv38shdbv0pdp8jjl4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIbyzifcF309FcmuCorH4TfuIjLvxag24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777680214392-7ohn9ctib7fb1cv38shdbv0pdp8jjl4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
