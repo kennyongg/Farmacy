@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class SavedTab extends StatelessWidget {
-
   final FirebaseServices _firebaseServices = FirebaseServices();
 
   @override
@@ -101,7 +100,6 @@ class SavedTab extends StatelessWidget {
                                                 fontWeight: FontWeight.w600),
                                           ),
                                         ),
-                                        
                                       ],
                                     ),
                                   ),

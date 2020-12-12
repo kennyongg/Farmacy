@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,8 +52,7 @@ class _HomePageState extends State<HomePage> {
           BottomTabs(
             selectedTab: _selectedTab,
             tabPressed: (num) {
-              _tabsPageController.animateToPage(
-                  num,
+              _tabsPageController.animateToPage(num,
                   duration: Duration(milliseconds: 300),
                   curve: Curves.easeOutCubic);
             },

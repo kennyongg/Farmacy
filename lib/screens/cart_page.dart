@@ -1,7 +1,9 @@
 import 'package:Farmacy/screens/home_page.dart';
 import 'package:Farmacy/screens/product_page.dart';
 import 'package:Farmacy/services/firebase_services.dart';
+import 'package:Farmacy/tabs/home_tab.dart';
 import 'package:Farmacy/tabs/saved_tab.dart';
+import 'package:Farmacy/widgets/bottom_tabs.dart';
 import 'package:Farmacy/widgets/custom_action_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +17,8 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-String _selectedProductSize = "0";
-Future _addToSaved() {
+  String _selectedProductSize = "0";
+  Future _addToSaved() {
     return _firebaseServices.usersRef
         .doc(_firebaseServices.getUserId())
         .collection("Saved")
@@ -170,29 +172,31 @@ Future _addToSaved() {
           ),
           GestureDetector(
             onTap: () async {
-                                await _addToSaved();
-Navigator.push(context,MaterialPageRoute(builder: (context) => SavedTab() ),);
-                              },
-            
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 65.0,
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              alignment: Alignment.center,
-              child: Text(
-                "Checkout",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600),
+              await _addToSaved();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 65.0,
+                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Checkout",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600),
+                ),
               ),
             ),
-          ),
           ),
         ],
       ),
