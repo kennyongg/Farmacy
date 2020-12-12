@@ -25,14 +25,6 @@ class _ProductPageState extends State<ProductPage> {
         .set({"size": _selectedProductSize});
   }
 
-  Future _addToSaved() {
-    return _firebaseServices.usersRef
-        .doc(_firebaseServices.getUserId())
-        .collection("Saved")
-        .doc(widget.productId)
-        .set({"size": _selectedProductSize});
-  }
-
   final SnackBar _snackBar = SnackBar(content: Text("Product added to the cart"),);
 
   @override
@@ -95,6 +87,19 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
+                        vertical: 4.0,
+                        horizontal: 24.0,
+                      ),
+                      child: Text(
+                        "Seller: ${documentData['seller']}",
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
                         vertical: 8.0,
                         horizontal: 24.0,
                       ),
@@ -126,27 +131,6 @@ class _ProductPageState extends State<ProductPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          GestureDetector(
-                            onTap: () async {
-                              await _addToSaved();
-                              Scaffold.of(context).showSnackBar(_snackBar);
-                            },
-                            child: Container(
-                              width: 65.0,
-                              height: 65.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFDCDCDC),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              alignment: Alignment.center,
-                              child: Image(
-                                image: AssetImage(
-                                  "assets/images/tab_saved.png",
-                                ),
-                                height: 22.0,
-                              ),
-                            ),
-                          ),
                           Expanded(
                             child: GestureDetector(
                               onTap: () async {
@@ -156,7 +140,6 @@ class _ProductPageState extends State<ProductPage> {
                               child: Container(
                                 height: 65.0,
                                 margin: EdgeInsets.only(
-                                  left: 16.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.black,

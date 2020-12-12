@@ -72,17 +72,6 @@ class SavedTab extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    width: 90,
-                                    height: 90,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        "${_productMap['images'][0]}",
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
                                     padding: EdgeInsets.only(
                                       left: 16.0,
                                     ),
@@ -93,7 +82,7 @@ class SavedTab extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "${_productMap['name']}",
+                                          "Order 1",
                                           style: TextStyle(
                                               fontSize: 18.0,
                                               color: Colors.black,
@@ -104,7 +93,7 @@ class SavedTab extends StatelessWidget {
                                             vertical: 4.0,
                                           ),
                                           child: Text(
-                                            "\$${_productMap['price']}",
+                                            "Order Status : Pending",
                                             style: TextStyle(
                                                 fontSize: 16.0,
                                                 color: Theme.of(context)
@@ -112,13 +101,7 @@ class SavedTab extends StatelessWidget {
                                                 fontWeight: FontWeight.w600),
                                           ),
                                         ),
-                                        Text(
-                                          "Size - ${document.data()['size']}",
-                                          style: TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.w600),
-                                        ),
+                                        
                                       ],
                                     ),
                                   ),
@@ -148,8 +131,9 @@ class SavedTab extends StatelessWidget {
             },
           ),
           CustomActionBar(
-            title: "Saved",
+            title: "Orders",
             hasBackArrrow: false,
+            hasCart: false,
           ),
         ],
       ),

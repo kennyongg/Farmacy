@@ -10,7 +10,8 @@ class CustomActionBar extends StatelessWidget {
   final bool hasBackArrrow;
   final bool hasTitle;
   final bool hasBackground;
-  CustomActionBar({this.title, this.hasBackArrrow, this.hasTitle, this.hasBackground});
+  final bool hasCart;
+  CustomActionBar({this.title, this.hasBackArrrow, this.hasTitle, this.hasBackground, this.hasCart});
 
   FirebaseServices _firebaseServices = FirebaseServices();
 
@@ -23,6 +24,7 @@ class CustomActionBar extends StatelessWidget {
     bool _hasBackArrow = hasBackArrrow ?? false;
     bool _hasTitle = hasTitle ?? true;
     bool _hasBackground = hasBackground ?? true;
+    bool _hasCart = hasCart ?? true;
 
     return Container(
       decoration: BoxDecoration(
@@ -72,6 +74,7 @@ class CustomActionBar extends StatelessWidget {
               title ?? "Action Bar",
               style: Constants.boldHeading,
             ),
+          if(_hasCart)
           GestureDetector(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
@@ -95,7 +98,6 @@ class CustomActionBar extends StatelessWidget {
                     List _documents = snapshot.data.docs;
                     _totalItems = _documents.length;
                   }
-
                   return Text(
                     "$_totalItems" ?? "0",
                     style: TextStyle(
